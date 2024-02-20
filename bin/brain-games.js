@@ -1,4 +1,7 @@
 #!/usr/bin/env node
-import brainGames from '../src/brain-games.js';
+import { greet, sayHello } from '../src/index.js';
+import getName from '../src/cli.js';
 
-brainGames();
+greet();
+const playerName = getName();
+sayHello(playerName);
