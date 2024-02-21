@@ -5,17 +5,29 @@
 # About
 Brain Games Hexlet Project
 
+# How to install
+```bash
+git clone git@github.com:kirillzheltov/frontend-project-44.git
+make install
+make publish
+(sudo) npm link
+```
+
 ## Even
 [![asciicast](https://asciinema.org/a/1GEpPwi1vWawq5rt9tActynLv.svg)](https://asciinema.org/a/1GEpPwi1vWawq5rt9tActynLv)
+
 
 ## Calc
 [![asciicast](https://asciinema.org/a/raX2udxKs6psE0XlLkcTLhXj5.svg)](https://asciinema.org/a/raX2udxKs6psE0XlLkcTLhXj5)
 
+
 ## GCD
 [![asciicast](https://asciinema.org/a/LFZjQLufCT9J7nadiW3waIXi2.svg)](https://asciinema.org/a/LFZjQLufCT9J7nadiW3waIXi2)
 
+
 ## Progression
 [![asciicast](https://asciinema.org/a/HF00Gg87Nj851ptx2rRaq5iwb.svg)](https://asciinema.org/a/HF00Gg87Nj851ptx2rRaq5iwb)
+
 
 ## Prime
 [![asciicast](https://asciinema.org/a/9twTZSIIPNMBtMm3ThY2frnrY.svg)](https://asciinema.org/a/9twTZSIIPNMBtMm3ThY2frnrY)

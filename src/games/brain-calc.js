@@ -1,30 +1,7 @@
-import { getRandomNumber } from '../index.js';
+import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
 
-const gameDescription = 'What is the result of the expression?';
-
-function getRandomSign() {
-  const signs = ['+', '-', '*'];
-  return signs[(Math.floor(Math.random() * signs.length))];
-}
-
-function getData() {
-  const minRandomValue = 1;
-  const maxRandomValue = 50;
-  return {
-    number1: getRandomNumber(minRandomValue, maxRandomValue),
-    number2: getRandomNumber(minRandomValue, maxRandomValue),
-    sign: getRandomSign(),
-  };
-}
-
-function getQuestion(data) {
-  const { number1, number2, sign } = data;
-  const expression = `${number1} ${sign} ${number2}`;
-  return expression;
-}
-
-function getTrueAnswer(data) {
-  const { number1, number2, sign } = data;
+function calculate(number1, number2, sign) {
   let result;
   switch (sign) {
     case '+':
@@ -43,12 +20,19 @@ function getTrueAnswer(data) {
 }
 
 function getGameData() {
-  const data = getData();
+  const minRandomValue = 1;
+  const maxRandomValue = 50;
+  const signs = ['+', '-', '*'];
+
+  const number1 = getRandomNumber(minRandomValue, maxRandomValue);
+  const number2 = getRandomNumber(minRandomValue, maxRandomValue);
+  const sign = signs[(Math.floor(Math.random() * signs.length))];
+
   return {
-    description: gameDescription,
-    question: getQuestion(data),
-    trueAnswer: getTrueAnswer(data),
+    description: 'What is the result of the expression?',
+    question: `${number1} ${sign} ${number2}`,
+    trueAnswer: calculate(number1, number2, sign),
   };
 }
 
-export default getGameData;
+export default () => startGame(getGameData);

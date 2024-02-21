@@ -1,16 +1,5 @@
-import { getRandomNumber } from '../index.js';
-
-const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-function getData() {
-  const minRandomValue = 1;
-  const maxRandomValue = 100;
-  return getRandomNumber(minRandomValue, maxRandomValue);
-}
-
-function getQuestion(data) {
-  return data;
-}
+import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
 
 function isPrime(number) {
   if (number <= 1) {
@@ -24,17 +13,17 @@ function isPrime(number) {
   return true;
 }
 
-function getTrueAnswer(number) {
-  return isPrime(number) ? 'yes' : 'no';
-}
-
 function getGameData() {
-  const data = getData();
+  const minRandomValue = 1;
+  const maxRandomValue = 100;
+
+  const number = getRandomNumber(minRandomValue, maxRandomValue);
+
   return {
-    description: gameDescription,
-    question: getQuestion(data),
-    trueAnswer: getTrueAnswer(data),
+    description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+    question: number,
+    trueAnswer: isPrime(number) ? 'yes' : 'no',
   };
 }
 
-export default getGameData;
+export default () => startGame(getGameData);

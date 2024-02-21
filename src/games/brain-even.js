@@ -1,32 +1,21 @@
-import { getRandomNumber } from '../index.js';
-
-const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-function getData() {
-  const minRandomValue = 1;
-  const maxRandomValue = 100;
-  return getRandomNumber(minRandomValue, maxRandomValue);
-}
-
-function getQuestion(data) {
-  return data;
-}
+import getRandomNumber from '../utils.js';
+import startGame from '../index.js';
 
 function isEven(number) {
   return (number % 2 === 0);
 }
 
-function getTrueAnswer(number) {
-  return isEven(number) ? 'yes' : 'no';
-}
-
 function getGameData() {
-  const data = getData();
+  const minRandomValue = 1;
+  const maxRandomValue = 100;
+
+  const number = getRandomNumber(minRandomValue, maxRandomValue);
+
   return {
-    description: gameDescription,
-    question: getQuestion(data),
-    trueAnswer: getTrueAnswer(data),
+    description: 'Answer "yes" if the number is even, otherwise answer "no".',
+    question: number,
+    trueAnswer: isEven(number) ? 'yes' : 'no',
   };
 }
 
-export default getGameData;
+export default () => startGame(getGameData);
