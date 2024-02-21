@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../index.js';
 
-const gameDescription = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'What number is missing in the progression?';
 
 function getData() {
   const aPStart = getRandomNumber(1, 100);
