@@ -1,22 +1,19 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
+const gameDescription = 'What is the result of the expression?';
+
 function calculate(number1, number2, sign) {
-  let result;
   switch (sign) {
     case '+':
-      result = number1 + number2;
-      break;
+      return (number1 + number2);
     case '-':
-      result = number1 - number2;
-      break;
+      return (number1 - number2);
     case '*':
-      result = number1 * number2;
-      break;
+      return (number1 * number2);
     default:
-      result = null;
+      throw new Error(`Unknown sign: '${sign}'!`);
   }
-  return result.toString();
 }
 
 function getGameData() {
@@ -29,10 +26,9 @@ function getGameData() {
   const sign = signs[(Math.floor(Math.random() * signs.length))];
 
   return {
-    description: 'What is the result of the expression?',
     question: `${number1} ${sign} ${number2}`,
-    trueAnswer: calculate(number1, number2, sign),
+    trueAnswer: calculate(number1, number2, sign).toString(),
   };
 }
 
-export default () => startGame(getGameData);
+export default () => startGame(gameDescription, getGameData);

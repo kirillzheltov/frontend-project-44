@@ -1,6 +1,8 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
+const gameDescription = 'Find the greatest common divisor of given numbers.';
+
 function gcd(number1, number2) {
   if (number1 === 0) {
     return number2;
@@ -16,10 +18,10 @@ function getGameData() {
   const number2 = getRandomNumber(minRandomValue, maxRandomValue);
 
   return {
-    description: 'Find the greatest common divisor of given numbers.',
+
     question: `${number1} ${number2}`,
     trueAnswer: gcd(number1, number2).toString(),
   };
 }
 
-export default () => startGame(getGameData);
+export default () => startGame(gameDescription, getGameData);
