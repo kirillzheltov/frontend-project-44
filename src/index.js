@@ -74,4 +74,9 @@ function startGame(getGameData) {
   playGame(playerName, getGameData);
 }
 
-export { getRandomNumber, startGame };
+export {
+  greet,
+  sayHello,
+  getRandomNumber,
+  startGame,
+};

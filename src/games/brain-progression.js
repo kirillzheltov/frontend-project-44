@@ -3,10 +3,16 @@ import { getRandomNumber } from '../index.js';
 const gameDescription = 'What number is missing in the progression?';
 
 function getData() {
-  const aPStart = getRandomNumber(1, 100);
-  const aPStep = getRandomNumber(1, 100);
-  const aPLength = getRandomNumber(5, 10);
-  const aPHiddenPosition = getRandomNumber(0, aPLength);
+  const minRandomValue1 = 1;
+  const maxRandomValue1 = 20;
+  const aPStart = getRandomNumber(minRandomValue1, maxRandomValue1);
+  const aPStep = getRandomNumber(minRandomValue1, maxRandomValue1);
+  const minRandomValue2 = 5;
+  const maxRandomValue2 = 10;
+  const aPLength = getRandomNumber(minRandomValue2, maxRandomValue2);
+  const minRandomValue3 = 0;
+  const maxRandomValue3 = aPLength - 1;
+  const aPHiddenPosition = getRandomNumber(minRandomValue3, maxRandomValue3);
   const aP = [];
 
   for (let i = 1; i <= aPLength; i += 1) {

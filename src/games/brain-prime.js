@@ -3,7 +3,9 @@ import { getRandomNumber } from '../index.js';
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function getData() {
-  return getRandomNumber(1, 100);
+  const minRandomValue = 1;
+  const maxRandomValue = 100;
+  return getRandomNumber(minRandomValue, maxRandomValue);
 }
 
 function getQuestion(data) {
