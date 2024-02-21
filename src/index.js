@@ -17,9 +17,9 @@ function showDescription(description) {
   console.log(description);
 }
 
-function getRandomNumber() {
-  const minCeiled = Math.ceil(1);
-  const maxFloored = Math.floor(100);
+function getRandomNumber(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 

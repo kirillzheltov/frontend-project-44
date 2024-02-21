@@ -3,7 +3,7 @@ import { getRandomNumber } from '../index.js';
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function getData() {
-  return getRandomNumber();
+  return getRandomNumber(1, 100);
 }
 
 function getQuestion(data) {
@@ -27,4 +27,4 @@ function getGameData() {
   };
 }
 
-export { getGameData };
+export default getGameData;

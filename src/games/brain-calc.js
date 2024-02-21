@@ -9,8 +9,8 @@ function getRandomSign() {
 
 function getData() {
   return {
-    number1: getRandomNumber(),
-    number2: getRandomNumber(),
+    number1: getRandomNumber(1, 100),
+    number2: getRandomNumber(1, 100),
     sign: getRandomSign(),
   };
 }
@@ -49,4 +49,4 @@ function getGameData() {
   };
 }
 
-export { getGameData };
+export default getGameData;
